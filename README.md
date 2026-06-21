@@ -1,119 +1,149 @@
 # Galactic Civilization Dashboard
 
+A data visualization platform for monitoring, comparing, and analyzing fictional interstellar civilizations through interactive dashboards and intelligence reports.
+
+---
+
+## Live Links
+
+| Resource         | Link                                                                          |
+| ---------------- | ----------------------------------------------------------------------------- |
+| Live Application | https://galactic-civilization-dashboard-bw3w5rjzfhanw896jfmvwm.streamlit.app/ |
+| Source Code      | https://github.com/JatinChoudhary-07/galactic-civilization-dashboard          |
+
+---
+
 ## Overview
 
-Galactic Civilization Dashboard is an interactive data visualization platform that enables users to explore, analyze, and compare the growth of fictional interstellar civilizations over time.
+The Galactic Civilization Dashboard allows users to explore a fictional galaxy populated by evolving civilizations.
 
-The application provides historical trend analysis, planetary rankings, civilization comparisons, downloadable reports, and theme customization through an intuitive dashboard interface.
-
----
-
-## Features
-
-### Civilization Monitoring
-
-* Planet selection
-* Year selection
-* Planet search
-* Civilization status tracking
-* Historical performance analysis
-
-### Analytics
-
-* Population trends
-* Economic growth tracking
-* Military development monitoring
-* Technology progression analysis
-* Happiness index visualization
-
-### Comparison Tools
-
-* Multi-planet comparison
-* Radar chart visualization
-* Civilization rankings
-* Cross-planet performance analysis
-
-### Reporting
-
-* Downloadable PDF reports
-* Current civilization snapshot export
-
-### User Experience
-
-* Dark mode
-* Light mode
-* Interactive Plotly visualizations
-* Responsive dashboard layout
+Each planet possesses unique characteristics such as population, economy, military strength, technological advancement, and happiness levels. Users can analyze historical trends, compare civilizations, generate intelligence reports, and monitor the overall state of the galaxy through an interactive dashboard.
 
 ---
 
-## System Architecture
+## Dashboard Capabilities
+
+| Module              | Description                                                     |
+| ------------------- | --------------------------------------------------------------- |
+| Planet Intelligence | Displays planet imagery, civilization lore, and current status  |
+| Metrics Dashboard   | Shows key civilization indicators and growth trends             |
+| Trend Analysis      | Visualizes historical development across multiple metrics       |
+| Rankings            | Compares civilizations based on selected performance indicators |
+| Comparison Engine   | Allows side by side analysis of multiple planets                |
+| PDF Reports         | Generates downloadable civilization intelligence reports        |
+| Theme Engine        | Supports both Dark and Light modes                              |
+
+---
+
+## Metrics Tracked
+
+| Metric     | Purpose                         |
+| ---------- | ------------------------------- |
+| Population | Civilization size and growth    |
+| Economy    | Economic development index      |
+| Military   | Defense and military capability |
+| Technology | Technological advancement level |
+| Happiness  | Citizen satisfaction indicator  |
+
+---
+
+## Technology Stack
+
+| Layer             | Technology |
+| ----------------- | ---------- |
+| Frontend          | Streamlit  |
+| Language          | Python     |
+| Data Processing   | Pandas     |
+| Visualization     | Plotly     |
+| Report Generation | ReportLab  |
+| Styling           | Custom CSS |
+
+---
+
+# System Architecture
 
 ```text
-                        ┌─────────────────┐
-                        │   CSV Dataset   │
-                        └────────┬────────┘
-                                 │
-                                 ▼
-                      ┌────────────────────┐
-                      │     loader.py      │
-                      └─────────┬──────────┘
-                                │
-                                ▼
-                      ┌────────────────────┐
-                      │       app.py       │
-                      │ Dashboard Control  │
-                      └─────────┬──────────┘
-                                │
-        ┌───────────────────────┼───────────────────────┐
-        │                       │                       │
-        ▼                       ▼                       ▼
+                    Galactic Civilization Dashboard
 
-  Sidebar Module        Visualization Layer      Utility Layer
+┌────────────────────────────────────────────────────┐
+│                  Civilization Dataset              │
+└──────────────────────────┬─────────────────────────┘
+                           │
+                           ▼
+                  ┌──────────────────┐
+                  │    loader.py     │
+                  └────────┬─────────┘
+                           │
+                           ▼
+                  ┌──────────────────┐
+                  │      app.py      │
+                  │ Main Controller  │
+                  └────────┬─────────┘
+                           │
 
-        │                       │                       │
+      ┌────────────────────┼────────────────────┐
+      │                    │                    │
+      ▼                    ▼                    ▼
 
-        ▼                       ▼                       ▼
+ Sidebar Layer      Visualization Layer    Utility Layer
 
-   sidebar.py             charts.py             theme.py
-                          rankings.py           lore.py
-                          comparison.py
-                          metrics.py
-                          pdf_export.py
-                          planet_image.py
+      │                    │                    │
+
+      ▼                    ▼                    ▼
+
+ sidebar.py         charts.py            theme.py
+                    metrics.py           lore.py
+                    rankings.py
+                    comparison.py
+                    pdf_export.py
+                    planet_image.py
+                    status.py
 ```
 
 ---
 
-## Data Flow
+# Dashboard Workflow
 
 ```text
-Dataset
-   │
-   ▼
-Load Data
-   │
-   ▼
 User Input
 (Planet + Year)
-   │
-   ▼
-Filtered Dataset
-   │
-   ├── Metrics
-   ├── Trends
-   ├── Rankings
-   ├── Comparison
-   ├── Planet Intelligence
-   └── PDF Reports
+        │
+        ▼
+Dataset Filtering
+        │
+        ▼
+Civilization Analysis
+        │
+ ┌──────┼───────────────┬───────────────┬───────────────┐
+ │      │               │               │               │
+ ▼      ▼               ▼               ▼               ▼
+
+Metrics Trends      Rankings     Comparison     PDF Export
 ```
+
+---
+
+## Feature Summary
+
+| Feature                | Status |
+| ---------------------- | ------ |
+| Planet Search          | ✓      |
+| Planet Selection       | ✓      |
+| Historical Analysis    | ✓      |
+| Interactive Charts     | ✓      |
+| Civilization Rankings  | ✓      |
+| Radar Chart Comparison | ✓      |
+| PDF Report Generation  | ✓      |
+| Dark Theme             | ✓      |
+| Light Theme            | ✓      |
+| Responsive Layout      | ✓      |
 
 ---
 
 ## Project Structure
 
 ```text
-galactic-dashboard/
+galactic-civilization-dashboard/
 
 ├── app.py
 │
@@ -127,7 +157,8 @@ galactic-dashboard/
 │   ├── pdf_export.py
 │   ├── planet_image.py
 │   ├── rankings.py
-│   └── sidebar.py
+│   ├── sidebar.py
+│   └── status.py
 │
 ├── data/
 │   └── galactic_civilization_data.csv
@@ -147,80 +178,22 @@ galactic-dashboard/
 
 ---
 
-## Technology Stack
-
-| Component         | Technology |
-| ----------------- | ---------- |
-| Frontend          | Streamlit  |
-| Language          | Python     |
-| Data Processing   | Pandas     |
-| Visualization     | Plotly     |
-| Report Generation | ReportLab  |
-| Styling           | CSS        |
-
----
-
-## Dashboard Modules
-
-### Metrics Dashboard
-
-Displays current civilization statistics and growth indicators.
-
-### Trend Analysis
-
-Interactive historical analysis for:
-
-* Population
-* Economy
-* Military
-* Technology
-* Happiness
-
-### Rankings
-
-Planet rankings based on:
-
-* Economy
-* Technology
-* Happiness
-
-### Comparison Engine
-
-Allows side-by-side comparison of multiple civilizations using:
-
-* Tabular comparison
-* Radar chart visualization
-
-### Planet Intelligence
-
-Provides:
-
-* Planet imagery
-* Civilization descriptions
-* Lore information
-
-### Report Generator
-
-Creates downloadable PDF reports containing current civilization metrics.
-
----
-
 ## Installation
 
-Clone the repository:
+### Clone Repository
 
 ```bash
-git clone <repository-url>
-cd galactic-dashboard
+git clone https://github.com/JatinChoudhary-07/galactic-civilization-dashboard.git
+cd galactic-civilization-dashboard
 ```
 
-Install dependencies:
+### Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Run the application:
+### Launch Application
 
 ```bash
 streamlit run app.py
@@ -228,20 +201,25 @@ streamlit run app.py
 
 ---
 
-## Future Improvements
+## Future Enhancements
 
-* Predictive civilization forecasting
-* Resource management metrics
-* Energy production analytics
-* Diplomacy and alliance systems
-* Real-time galactic events
-* Advanced reporting system
+| Planned Feature    | Description                               |
+| ------------------ | ----------------------------------------- |
+| Forecast Engine    | Predict future civilization growth        |
+| Resource Analytics | Track resource production and consumption |
+| Diplomacy System   | Interplanetary relations and alliances    |
+| Galactic Events    | Dynamic events affecting civilizations    |
+| Expanded Reports   | Advanced intelligence reporting           |
 
 ---
 
 ## Author
 
-Jatin Choudhary
+| Field     | Information                                   |
+| --------- | --------------------------------------------- |
+| Name      | Jatin Choudhary                               |
+| Program   | B.Tech CSE (Blockchain Technology)            |
+| Batch     | 2025–2029                                     |
 
-
-Batch 2025–2029
+```
+```
