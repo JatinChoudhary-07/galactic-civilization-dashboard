@@ -1,4 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
+
 
 /* =========================
    Main App
@@ -8,6 +10,34 @@
     background-color: #05080d;
 }
 
+
+/* =========================
+   Typography
+========================= */
+
+html,
+body,
+.stApp,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+h1 {
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+h2,
+h3 {
+    font-weight: 500;
+}
+
+
 /* =========================
    Sidebar
 ========================= */
@@ -15,10 +45,14 @@
 section[data-testid="stSidebar"] {
     background-color: #0a1018;
     border-right: 1px solid #173b22;
+
+    box-shadow:
+        2px 0 15px rgba(0, 0, 0, 0.25);
 }
 
+
 /* =========================
-   Main Content Width
+   Main Content
 ========================= */
 
 .block-container {
@@ -27,18 +61,29 @@ section[data-testid="stSidebar"] {
     max-width: 95%;
 }
 
+
 /* =========================
-   Titles
+   Dashboard Title
 ========================= */
 
-h1 {
-    font-weight: 600;
-    letter-spacing: 1px;
+.main-title {
+    font-size: 3.2rem;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+
+    background: linear-gradient(
+        90deg,
+        #69ff7a,
+        #4da3ff
+    );
+
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    margin-bottom: 10px;
 }
 
-h2, h3 {
-    font-weight: 500;
-}
 
 /* =========================
    Metrics
@@ -46,19 +91,33 @@ h2, h3 {
 
 [data-testid="metric-container"] {
     background-color: #0c1118;
+
     border: 1px solid #173b22;
-    border-radius: 14x;
-    padding: 18x;
-    transition: 0.2s ease;
+    border-radius: 14px;
+
+    padding: 18px;
+
+    backdrop-filter: blur(8px);
+
+    transition: all 0.2s ease;
+
     box-shadow:
-        0 0 8px rgba(105,255,122,0.08);
+        0 0 8px rgba(105, 255, 122, 0.08);
 }
+
 [data-testid="metric-container"]:hover {
-    border-color: #1bbf31;
+    border-color: #69ff7a;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 0 12px rgba(105, 255, 122, 0.15);
 }
+
 [data-testid="stMetricValue"] {
     color: #69ff7a;
 }
+
 
 /* =========================
    Dividers
@@ -68,6 +127,7 @@ hr {
     border-color: #173b22;
 }
 
+
 /* =========================
    Selectboxes
 ========================= */
@@ -76,34 +136,11 @@ hr {
     background-color: #0c1118;
 }
 
+
 /* =========================
    Images
 ========================= */
 
 img {
     border-radius: 12px;
-}
-
-/* =========================
-    Font
-========================= */
-
-html, body, .stApp{
-    font-family: 'Montserrat', sans-serif;
-}
-
-.main-title{
-    font-size:3rem;
-    font-weight:800;
-
-    background: linear-gradient(
-        90deg,
-        #69ff7a,
-        #4da3ff
-    );
-
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
-
-    margin-bottom:10px;
 }

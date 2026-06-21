@@ -1,18 +1,27 @@
+
 import streamlit as st
+
 
 def render_sidebar(df):
 
+    # Theme Toggle
     theme = st.sidebar.toggle(
-    "Light Mode",
-    value=False
+        "Light Mode",
+        value=False
     )
-    
+
+    st.sidebar.title("Navigation")
+
+    # Planet List
     planets = sorted(
-    df["planet"].unique()
+        df["planet"].unique()
     )
+
+    # Planet Search
     search_query = st.sidebar.text_input(
         "Search Planet"
     )
+
     if search_query:
 
         planets = [
@@ -22,16 +31,23 @@ def render_sidebar(df):
             in planet.lower()
         ]
 
-    st.sidebar.title("Navigation")
+    # Planet Selector
     selected_planet = st.sidebar.selectbox(
         "Select Planet",
         planets
     )
-    
 
+    # Year Selector
     selected_year = st.sidebar.selectbox(
         "Select Year",
-        sorted(df["year"].unique())
+        sorted(
+            df["year"].unique()
+        )
     )
 
-    return selected_planet, selected_year, theme
+    return (
+        selected_planet,
+        selected_year,
+        theme
+    )
+
