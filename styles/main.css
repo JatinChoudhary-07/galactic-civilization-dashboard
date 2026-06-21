@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap');
+
+/* =========================
+   Main App
+========================= */
+
+.stApp {
+    background-color: #05080d;
+}
+
+/* =========================
+   Sidebar
+========================= */
+
+section[data-testid="stSidebar"] {
+    background-color: #0a1018;
+    border-right: 1px solid #173b22;
+}
+
+/* =========================
+   Main Content Width
+========================= */
+
+.block-container {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    max-width: 95%;
+}
+
+/* =========================
+   Titles
+========================= */
+
+h1 {
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+h2, h3 {
+    font-weight: 500;
+}
+
+/* =========================
+   Metrics
+========================= */
+
+[data-testid="metric-container"] {
+    background-color: #0c1118;
+    border: 1px solid #173b22;
+    border-radius: 14x;
+    padding: 18x;
+    transition: 0.2s ease;
+    box-shadow:
+        0 0 8px rgba(105,255,122,0.08);
+}
+[data-testid="metric-container"]:hover {
+    border-color: #1bbf31;
+}
+[data-testid="stMetricValue"] {
+    color: #69ff7a;
+}
+
+/* =========================
+   Dividers
+========================= */
+
+hr {
+    border-color: #173b22;
+}
+
+/* =========================
+   Selectboxes
+========================= */
+
+.stSelectbox > div > div {
+    background-color: #0c1118;
+}
+
+/* =========================
+   Images
+========================= */
+
+img {
+    border-radius: 12px;
+}
+
+/* =========================
+    Font
+========================= */
+
+html, body, .stApp{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.main-title{
+    font-size:3rem;
+    font-weight:800;
+
+    background: linear-gradient(
+        90deg,
+        #69ff7a,
+        #4da3ff
+    );
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+
+    margin-bottom:10px;
+}
