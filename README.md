@@ -36,7 +36,7 @@ What started as a dataset filled with completely random numbers eventually becam
 
 ### Dashboard Overview
 
-![Dashboard Overview](screenshots/dashboard-dark.png)
+![Dashboard Overview](Screenshot%202026-06-22%20045127.png)
 
 *Monitor civilization growth through key metrics, trend analysis, planetary intelligence, and downloadable reports.*
 
@@ -44,7 +44,7 @@ What started as a dataset filled with completely random numbers eventually becam
 
 ### Light Mode Experience
 
-![Light Mode](screenshots/dashboard-light.png)
+![Light Mode](Screenshot%202026-06-22%20045052.png)
 
 *Switch between dark and light themes while exploring the galaxy.*
 
@@ -52,7 +52,10 @@ What started as a dataset filled with completely random numbers eventually becam
 
 ### Civilization Comparison & Rankings
 
-![Comparison](screenshots/comparison-rankings.png)
+
+![Comparison & Rankings](Screenshot%202026-06-22%20044952.png)
+
+*Compare civilizations side by side using ranking systems, performance tables, and radar chart visualizations.*
 
 *Compare civilizations side by side using ranking systems, performance tables, and radar chart visualizations.*
 
